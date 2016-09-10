@@ -14,15 +14,17 @@ import android.os.Vibrator;
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
+import android.view.TextureView;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import __ANDROID_PACKAGE__.R;
+import com.ionicframework.myapp583625.R;
 import com.jieweifu.plugins.barcode.camera.CameraManager;
 import com.jieweifu.plugins.barcode.decode.CaptureActivityHandler;
 import com.jieweifu.plugins.barcode.decode.InactivityTimer;
@@ -45,6 +47,7 @@ public class CaptureActivity extends Activity implements Callback {
     private int cropHeight = 0;
     private RelativeLayout mContainer = null;
     private RelativeLayout mCropLayout = null;
+    private TextView tv_type = null;
 
     public int getX() {
         return x;
@@ -85,6 +88,7 @@ public class CaptureActivity extends Activity implements Callback {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr_scan);
+        
         // 初始化 CameraManager
         CameraManager.init(getApplication());
         hasSurface = false;
@@ -92,6 +96,8 @@ public class CaptureActivity extends Activity implements Callback {
 
         mContainer = (RelativeLayout) findViewById(R.id.capture_containter);
         mCropLayout = (RelativeLayout) findViewById(R.id.capture_crop_layout);
+        tv_type = (TextView) findViewById(R.id.tv_type);
+        tv_type.setText(getIntent().getStringExtra("type"));
 
         ImageView mQrLineView = (ImageView) findViewById(R.id.capture_scan_line);
         ScaleAnimation animation = new ScaleAnimation(1.0f, 1.0f, 0.0f, 1.0f);
@@ -117,12 +123,12 @@ public class CaptureActivity extends Activity implements Callback {
     }
 
     protected void setButtonListeners() {
-        findViewById(R.id.imgBtnFlash).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                light();
-            }
-        });
+//        findViewById(R.id.imgBtnFlash).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                light();
+//            }
+//        });
 
         findViewById(R.id.imgBtnBack).setOnClickListener(new View.OnClickListener() {
             @Override
