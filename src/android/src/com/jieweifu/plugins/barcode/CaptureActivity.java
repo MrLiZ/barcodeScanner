@@ -24,7 +24,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ionicframework.myapp583625.R;
+import __ANDROID_PACKAGE__.R;
 import com.jieweifu.plugins.barcode.camera.CameraManager;
 import com.jieweifu.plugins.barcode.decode.CaptureActivityHandler;
 import com.jieweifu.plugins.barcode.decode.InactivityTimer;
