@@ -2,7 +2,7 @@
 //  BarcodeScannerViewController.h
 //  barcode
 //
-//  Created by 张云龙 on 16/3/18.
+//  Created by jingren on 16/9/11.
 //  Copyright © 2016年 jieweifu. All rights reserved.
 //
 

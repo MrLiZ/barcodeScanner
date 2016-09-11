@@ -2,7 +2,7 @@
 //  CDVBarcodeScanner.h
 //  HelloCordova
 //
-//  Created by 张云龙 on 16/3/18.
+//  Created by jingren on 16/9/11.
 //
 //
 
@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) NSString *currentCallbackId;
 - (void)startScan:(CDVInvokedUrlCommand *)command;
+
+- (void)hasPermission:(CDVInvokedUrlCommand *)command;
 @end

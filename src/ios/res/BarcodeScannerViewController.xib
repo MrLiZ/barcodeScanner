@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -14,6 +14,7 @@
                 <outlet property="scanNetHeightConstraint" destination="52X-8d-FOe" id="KOr-hv-Npq"/>
                 <outlet property="scanNetImage" destination="fVI-q3-mpA" id="zLm-w7-6f2"/>
                 <outlet property="scanView" destination="coV-y0-6Qq" id="B44-nx-jve"/>
+                <outlet property="subtitle" destination="mcj-Ti-Ay4" id="2Ty-JU-b0C"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,13 +23,27 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhi-4B-jH5">
+                <view contentMode="scaleToFill" horizontalHuggingPriority="320" verticalHuggingPriority="320" translatesAutoresizingMaskIntoConstraints="NO" id="fhi-4B-jH5">
                     <rect key="frame" x="0.0" y="63" width="320" height="505"/>
                     <subviews>
                         <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRS-qs-xQS">
                             <rect key="frame" x="0.0" y="1" width="320" height="80"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="锁定审核通过" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcj-Ti-Ay4">
+                                    <rect key="frame" x="53" y="28" width="224" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="31T-eb-ogr"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="mcj-Ti-Ay4" firstAttribute="bottom" secondItem="QRS-qs-xQS" secondAttribute="bottomMargin" id="Yks-s0-DRw"/>
+                                <constraint firstAttribute="trailing" secondItem="mcj-Ti-Ay4" secondAttribute="trailing" constant="43" id="ahk-Uz-Tne"/>
+                                <constraint firstItem="mcj-Ti-Ay4" firstAttribute="leading" secondItem="QRS-qs-xQS" secondAttribute="leading" constant="53" id="oMN-sF-Wca"/>
                                 <constraint firstAttribute="height" constant="80" id="p7C-Dq-fRV"/>
                             </constraints>
                         </view>
@@ -43,12 +58,12 @@
                         <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7I-FP-lE3">
                             <rect key="frame" x="40" y="321" width="240" height="184"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="将二维码图片对准扫描框即可自动扫描" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZo-gO-a5K">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请扫描报销单上的二维码" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZo-gO-a5K">
                                     <rect key="frame" x="8" y="2" width="224" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="kua-Rb-BJ1"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -141,7 +156,7 @@
                         <constraint firstItem="Vpt-Pk-QDC" firstAttribute="top" secondItem="QRS-qs-xQS" secondAttribute="bottom" id="wZc-mZ-1du"/>
                     </constraints>
                 </view>
-                <view alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORQ-3l-69F">
+                <view alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="320" verticalHuggingPriority="320" translatesAutoresizingMaskIntoConstraints="NO" id="ORQ-3l-69F">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgx-Bv-caG">
@@ -174,9 +189,6 @@
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫 一 扫" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dx1-8M-oah">
                             <rect key="frame" x="117" y="27" width="86" height="29"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="86" id="nKH-KO-NHz"/>
-                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
@@ -185,12 +197,12 @@
                     <color key="backgroundColor" red="0.18431372549019609" green="0.18431372549019609" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="dx1-8M-oah" firstAttribute="leading" secondItem="Wgx-Bv-caG" secondAttribute="trailing" constant="89" id="3zc-qP-PKL"/>
+                        <constraint firstItem="I4m-5S-dmR" firstAttribute="leading" secondItem="dx1-8M-oah" secondAttribute="trailing" constant="79" id="74o-IO-xln"/>
                         <constraint firstItem="I4m-5S-dmR" firstAttribute="trailing" secondItem="ORQ-3l-69F" secondAttribute="trailingMargin" id="RKP-DQ-uTL"/>
-                        <constraint firstItem="dx1-8M-oah" firstAttribute="leading" secondItem="ORQ-3l-69F" secondAttribute="leading" constant="117" id="Rtf-Qo-cpm"/>
-                        <constraint firstAttribute="bottom" secondItem="dx1-8M-oah" secondAttribute="bottom" constant="8" id="U05-mU-AhD"/>
                         <constraint firstAttribute="bottom" secondItem="I4m-5S-dmR" secondAttribute="bottom" constant="8" id="XWm-rf-ee6"/>
-                        <constraint firstAttribute="trailing" secondItem="dx1-8M-oah" secondAttribute="trailing" constant="117" id="bDp-1F-b89"/>
                         <constraint firstAttribute="bottom" secondItem="Wgx-Bv-caG" secondAttribute="bottom" constant="8" id="eMx-QC-DOk"/>
+                        <constraint firstItem="dx1-8M-oah" firstAttribute="top" secondItem="ORQ-3l-69F" secondAttribute="top" constant="27" id="kwt-US-C12"/>
                         <constraint firstAttribute="height" constant="64" id="plg-P3-Lb2"/>
                         <constraint firstItem="Wgx-Bv-caG" firstAttribute="leading" secondItem="ORQ-3l-69F" secondAttribute="leadingMargin" id="zbb-pg-XCQ"/>
                     </constraints>

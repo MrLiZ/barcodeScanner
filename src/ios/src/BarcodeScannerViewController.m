@@ -2,7 +2,7 @@
 //  BarcodeScannerViewController.m
 //  barcode
 //
-//  Created by 张云龙 on 16/3/18.
+//  Created by jingren on 16/9/11.
 //  Copyright © 2016年 jieweifu. All rights reserved.
 //
 
@@ -12,6 +12,7 @@
 @interface BarcodeScannerViewController ()<AVCaptureMetadataOutputObjectsDelegate, BarcodeScannerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *renderView;
 @property (weak, nonatomic) IBOutlet UIView *scanView;
+@property (weak, nonatomic) IBOutlet UILabel *subtitle;
 @property (strong, nonatomic) AVAudioPlayer *beepPlayer;
 @property BOOL isFlashLightOn;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *scanNetHeightConstraint;
@@ -57,10 +58,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //读取A界面传递过来的值
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.subtitle.text = [defaults valueForKey:@"subtitle"];
+    
     [self initResource];
     [self initCapture];
     [self startScanning];
 }
+
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
