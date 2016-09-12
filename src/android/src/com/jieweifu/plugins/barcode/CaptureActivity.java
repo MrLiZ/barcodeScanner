@@ -2,6 +2,11 @@ package com.jieweifu.plugins.barcode;
 
 import java.io.IOException;
 
+import __ANDROID_PACKAGE__.R;
+import com.jieweifu.plugins.barcode.camera.CameraManager;
+import com.jieweifu.plugins.barcode.decode.CaptureActivityHandler;
+import com.jieweifu.plugins.barcode.decode.InactivityTimer;
+
 import android.app.Activity;
 import android.content.res.AssetFileDescriptor;
 import android.graphics.Point;
@@ -14,7 +19,6 @@ import android.os.Vibrator;
 import android.view.SurfaceHolder;
 import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
-import android.view.TextureView;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
@@ -22,15 +26,6 @@ import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import __ANDROID_PACKAGE__.R;
-import com.jieweifu.plugins.barcode.camera.CameraManager;
-import com.jieweifu.plugins.barcode.decode.CaptureActivityHandler;
-import com.jieweifu.plugins.barcode.decode.InactivityTimer;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 public class CaptureActivity extends Activity implements Callback {
 
