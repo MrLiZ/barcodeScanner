@@ -42,10 +42,11 @@
 		<uses-feature android:name="android.hardware.camera.autofocus" />
     </config-file>
 
+    <source-file src="src/android/libs/arm64-v8a/libzbar.so" target-dir="libs/arm-v8a"/>
     <source-file src="src/android/libs/armeabi/libzbar.so" target-dir="libs/armeabi"/>
-    <source-file src="src/android/libs/armeabi/libzbar.so" target-dir="libs/armeabi"/>
-    <source-file src="src/android/libs/armeabi/libzbar.so" target-dir="libs/armeabi"/>
-    <source-file src="src/android/libs/armeabi/libzbar.so" target-dir="libs/armeabi"/>
+    <source-file src="src/android/libs/armeabi-v7a/libzbar.so" target-dir="libs/armeabi-v7a"/>
+    <source-file src="src/android/libs/x86/libzbar.so" target-dir="libs/x86"/>
+    <source-file src="src/android/libs/x86_64/libzbar.so" target-dir="libs/x86_64"/>
     <source-file src="src/android/src/com/jieweifu/plugins/barcode/BarcodePlugin.java" target-dir="src/com/jieweifu/plugins/barcode"/>
     <source-file src="src/android/src/com/jieweifu/plugins/barcode/CaptureActivity.java" target-dir="src/com/jieweifu/plugins/barcode"/>
     <source-file src="src/android/src/com/jieweifu/plugins/barcode/ZbarManager.java" target-dir="src/com/zbar/lib"/>
