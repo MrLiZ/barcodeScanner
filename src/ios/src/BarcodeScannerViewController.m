@@ -136,6 +136,7 @@
     //设置代理 在主线程里刷新
     [output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
     //设置有效扫描区域
+    
     CGRect scanCrop=[self getScanCrop:self.scanView.bounds readerViewBounds:self.renderView.frame];
     output.rectOfInterest = scanCrop;
     //初始化链接对象
@@ -150,7 +151,9 @@
     
     AVCaptureVideoPreviewLayer * layer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
     layer.videoGravity=AVLayerVideoGravityResizeAspectFill;
-    layer.frame=self.view.layer.bounds;
+    //    layer.frame=self.view.layer.bounds;
+//    NSLog(@"%@", NSStringFromCGRect(self.renderView.frame));
+    layer.frame=self.renderView.bounds;
     [self.view.layer insertSublayer:layer atIndex:0];
 }
 
@@ -171,7 +174,7 @@
             break;
         }
     }
-
+    
     if (!self.isDismissViewController) {
         if (self.delegate && [self.delegate respondsToSelector:@selector(reader:)]) {
             [self.delegate reader:result];
@@ -197,13 +200,13 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

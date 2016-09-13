@@ -26,7 +26,7 @@
     
     BarcodeScannerViewController *barcodeCtrl = [[BarcodeScannerViewController alloc] initWithNibName:@"BarcodeScannerViewController" bundle:nil];
     barcodeCtrl.delegate = self;
-    barcodeCtrl.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    barcodeCtrl.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self.viewController presentViewController:barcodeCtrl animated:YES completion:nil];
 }
 
