@@ -9,9 +9,9 @@ This plugin implements barcode scanner on Cordova 4.0
 
 ![二维码图片](https://github.com/engine9012/barcodeScanner/blob/master/IMG_0650.PNG)
 
-## Use Tips
+## Usage
 
-cordova plugin add [dir]
+cordova plugin add https://github.com/engine9012/barcodeScanner.git
 
 ## JS 
 ``` js
